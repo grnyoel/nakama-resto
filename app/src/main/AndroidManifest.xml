@@ -34,6 +34,11 @@
             android:name=".RegisterActivity"
             android:exported="false" />
 
+        <!-- MainHomeActivity -->
+        <activity
+            android:name=".MainHomeActivity"
+            android:exported="true" />
+
     </application>
 
 </manifest>

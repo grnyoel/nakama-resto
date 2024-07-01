@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
                     // Replace this part with actual authentication logic
                     if(username.equals("admin") && password.equals("admin")) {
                         Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, MainHomeActivity.class);
+                        startActivity(intent);
+                        finish();
                     } else {
                         Toast.makeText(MainActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
                     }
@@ -53,6 +56,30 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
+        });
+
+        homeFragment = new HomeFragment();
+        ordersFragment = new OrdersFragment();
+        chatFragment = new ChatFragment();
+        profileFragment = new ProfileFragment();
+
+        BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
+        navigation.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    setFragment(homeFragment);
+                    return true;
+                case R.id.navigation_chat:
+                    setFragment(chatFragment);
+                    return true;
+                case R.id.navigation_orders:
+                    setFragment(ordersFragment);
+                    return true;
+                case R.id.navigation_profile:
+                    setFragment(profileFragment);
+                    return true;
+            }
+            return false;
         });
     }
 }
