@@ -57,29 +57,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        homeFragment = new HomeFragment();
-        ordersFragment = new OrdersFragment();
-        chatFragment = new ChatFragment();
-        profileFragment = new ProfileFragment();
-
-        BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
-        navigation.setOnNavigationItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    setFragment(homeFragment);
-                    return true;
-                case R.id.navigation_chat:
-                    setFragment(chatFragment);
-                    return true;
-                case R.id.navigation_orders:
-                    setFragment(ordersFragment);
-                    return true;
-                case R.id.navigation_profile:
-                    setFragment(profileFragment);
-                    return true;
-            }
-            return false;
-        });
     }
 }

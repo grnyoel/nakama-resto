@@ -28,7 +28,7 @@ public class MainHomeActivity extends AppCompatActivity {
                     case R.id.navigation_orders:
                         selectedFragment = new OrdersFragment();
                         break;
-                    case R.id.navigation_chat:
+                    case R.id.navigation_history:
                         selectedFragment = new ChatFragment();
                         break;
                     case R.id.navigation_profile:
