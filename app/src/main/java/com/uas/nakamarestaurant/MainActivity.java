@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText etPassword;
     private Button btnLogin;
     private TextView tvRegister;
+    private UserDAO userDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         tvRegister = findViewById(R.id.tvRegister);
 
+        userDAO = new UserDAO(this);
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
                 if(username.isEmpty() || password.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Replace this part with actual authentication logic
-                    if(username.equals("admin") && password.equals("admin")) {
+                    UserDAO db = new UserDAO(MainActivity.this);
+                    if(db.checkUser(username, password)) {
                         Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this, MainHomeActivity.class);
                         startActivity(intent);
