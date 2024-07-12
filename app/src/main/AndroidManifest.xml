@@ -39,6 +39,19 @@
             android:name=".MainHomeActivity"
             android:exported="true" />
 
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".ActivityHistoryActivity"
+            android:exported="false"/>
+
+
     </application>
 
 </manifest>
