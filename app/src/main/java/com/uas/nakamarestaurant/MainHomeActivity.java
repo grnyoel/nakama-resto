@@ -29,7 +29,7 @@ public class MainHomeActivity extends AppCompatActivity {
                         selectedFragment = new OrdersFragment();
                         break;
                     case R.id.navigation_history:
-                        selectedFragment = new ChatFragment();
+                        selectedFragment = new HistoryFragment();
                         break;
                     case R.id.navigation_profile:
                         selectedFragment = new ProfileFragment();
