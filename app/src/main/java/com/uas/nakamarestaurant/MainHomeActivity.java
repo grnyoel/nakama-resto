@@ -6,10 +6,14 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainHomeActivity extends AppCompatActivity {
+
+    private RecyclerView.Adapter adapter, adapter2;
+    private  RecyclerView recyclerViewCategoryList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
